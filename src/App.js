@@ -8,9 +8,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         
-        <Learn/>
+        <Learn name='{ini adalah props}'/>
         <Learning/>
       </header>
+    
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
-function Hello(){
-    return <h3>-ni contoh functional components-</h3>
+function Hello(props){
+    return <h3>-ni contoh functional components-{props.name}</h3>
 }
 
 
