@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Learn from './components/Hello';
-import Learning from './components/comClas';
+import Comclass from './components/comClas';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         
         <Learn name='{ini adalah props}'/>
-        <Learning/>
+        <Comclass/>
       </header>
     
     </div>
