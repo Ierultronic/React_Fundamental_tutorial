@@ -19,9 +19,9 @@ clickHandler = () => {
   //  alert('hehe tiddies')
   this.setState({
     buah:[
-        {name:'Stay', weight:'420gm'},
-        {name:'Hydrated', weight:'320gm'},
-        {name:'MuhFucker', weight:'690gm'},
+        {name:'You Are Scammer!', weight:'420gm'},
+        {name:'Filet Mignon', weight:'320gm'},
+        {name:'и я буду бояться остаться один на один', weight:'690gm'},
     ],
     stats:[
         {mesej:'Selepas tukar state guna button tiddies'}
