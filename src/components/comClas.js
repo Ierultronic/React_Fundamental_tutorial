@@ -12,11 +12,14 @@ class Learning extends Component{
             ]
         }
     }
-    
+clickHandler = () => {
+    alert('hehe tiddies')
+}
 
     render(){
         return(
             <div>
+                <p>check dis out: <button onClick={this.clickHandler}>( . Y . )</button></p>
                 <h3>-ni adalah class component- contoh pakai state macamni: </h3>
                 <h3>{this.state.buah[0].name}</h3>
                 <h3>{this.state.buah[1].name}</h3>
