@@ -1,23 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
-import ComFunct from './components/Hello';
-import Comclass from './components/comClas';
-import HookState from './components/Hookstate';
-import DataBind from './components/Check';
+import React from "react";
+// import logo from './logo.svg';
+// import './App.css';
+// import ComFunct from './components/Hello';
+// import Comclass from './components/comClas';
+// import HookState from './components/Hookstate';
+// import DataBind from './components/Check';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
+// function App() {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
         
         
-        {/* <ComFunct name='{ini adalah props}'/> */}
-        <Comclass/>
+//         {/* <ComFunct name='{ini adalah props}'/> */}
+//         <Comclass/>
         
-      </header>
+//       </header>
     
-    </div>
-  );
+//     </div>
+//   );
+// }
+
+class App extends React.Component{
+
+  state ={
+    contoh:""
+  }
+
+  ChangeData= (event) => {
+    let val= event.target.value;
+    this.setState({contoh:val});
+  }
+
+  render(){
+    return(
+      <div className="App">
+        <h1>Single Input(OnChange punya Contoh '{this.state.contoh}')</h1>
+        <div>
+          <form>
+            <div class="form-group" style={{marginLeft:200}}>
+              <label>Username:</label><br></br>
+              <input type="text" name='username' onChange={this.ChangeData}></input><br></br>
+              <button type='submit'>Submit Martzz</button>
+
+            </div>
+          </form>
+        </div>
+
+      </div>
+    )
+  }
 }
 
 export default App;
