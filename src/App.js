@@ -3,6 +3,7 @@ import './App.css';
 import ComFunct from './components/Hello';
 import Comclass from './components/comClas';
 import HookState from './components/Hookstate';
+import DataBind from './components/Check';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <HookState/>
         <ComFunct name='{ini adalah props}'/>
         <Comclass/>
+        <DataBind/>
       </header>
     
     </div>

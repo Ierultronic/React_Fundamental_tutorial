@@ -32,13 +32,14 @@ clickHandler = () => {
     render(){
         return(
             <div>
-
+                <p>------------------------</p>
                 <p>check dis out: <button onClick={this.clickHandler}>( . Y . )</button></p>
                 <h3>-ni adalah class component- contoh pakai state macamni: </h3>
                 <p>{this.state.stats[0].mesej}:</p>
                 <h3>-{this.state.buah[0].name}</h3>
                 <h3>-{this.state.buah[1].name}</h3>
                 <h3>-{this.state.buah[2].name}</h3>
+                <p>------------------------</p>
             </div>
         ) 
     }
