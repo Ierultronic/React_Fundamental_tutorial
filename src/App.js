@@ -24,24 +24,35 @@ import React from "react";
 class App extends React.Component{
 
   state ={
-    contoh:""
+    user:"",
+    fon:"",
+    emel:""
   }
 
   ChangeData= (event) => {
-    let val= event.target.name; //username
+    let val= event.target.name; //username, phone, email
     let myval = event.target.value //getting value
     this.setState({[val]:myval}); // value set on the state
   }
 
+  // formSubmit = (event) =>{
+  //   event.preventDefault(); //tak refresh bila tekan submit tau, power power
+  // } kalau nak guna ni guna <form onSubmit={this.formSubmit}> gitchewww
+
   render(){
     return(
       <div className="App">
-        <h1>Single Input(OnChange punya Contoh '{this.state.username}')</h1>
+        
+        <p>name diberi: {this.state.username}</p>
+        <p>Nomboq tepon: {this.state.phone}</p>
+        <p>Email edqaih: {this.state.email}</p>
         <div>
-          <form>
+          <form> 
             <div class="form-group" style={{marginLeft:200}}>
-              <label>Username:</label><br></br>
+              <label>input test:</label><br></br>
               <input type="text" name='username' onChange={this.ChangeData}></input><br></br>
+              <input type="text" name='phone' onChange={this.ChangeData}></input><br></br>
+              <input type="text" name='email' onChange={this.ChangeData}></input><br></br>
               <button type='submit'>Submit Martzz</button>
 
             </div>
