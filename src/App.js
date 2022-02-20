@@ -10,10 +10,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         
-        <HookState/>
-        <ComFunct name='{ini adalah props}'/>
+        
+        {/* <ComFunct name='{ini adalah props}'/> */}
         <Comclass/>
-        <DataBind/>
+        
       </header>
     
     </div>
