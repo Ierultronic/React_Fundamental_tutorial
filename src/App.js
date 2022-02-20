@@ -24,35 +24,35 @@ import React from "react";
 class App extends React.Component{
 
   state ={
-    user:"",
-    fon:"",
-    emel:""
+    emel:"",
+    paswed:""
   }
 
-  ChangeData= (event) => {
-    let val= event.target.name; //username, phone, email
-    let myval = event.target.value //getting value
-    this.setState({[val]:myval}); // value set on the state
-  }
+  // ChangeData= (event) => {
+  //   let val= event.target.name; //username, phone, email
+  //   let myval = event.target.value //getting value
+  //   this.setState({[val]:myval}); // value set on the state
+  // }
 
-  // formSubmit = (event) =>{
-  //   event.preventDefault(); //tak refresh bila tekan submit tau, power power
-  // } kalau nak guna ni guna <form onSubmit={this.formSubmit}> gitchewww
+ formSubmit = (event) =>{
+     event.preventDefault(); //tak refresh bila tekan submit tau, power power 
+    console.log(this.state.emel, this.state.paswed)
+    
+    } 
+  //kalau nak guna ni guna <form onSubmit={this.formSubmit}> gitchewww
 
   render(){
     return(
       <div className="App">
         
-        <p>name diberi: {this.state.username}</p>
-        <p>Nomboq tepon: {this.state.phone}</p>
-        <p>Email edqaih: {this.state.email}</p>
+        <p>email lu mat: {this.state.emel}</p>
+        <p>paswed: {this.state.paswed}</p>
         <div>
-          <form> 
+          <form onSubmit={this.formSubmit}> 
             <div class="form-group" style={{marginLeft:200}}>
               <label>input test:</label><br></br>
-              <input type="text" name='username' onChange={this.ChangeData}></input><br></br>
-              <input type="text" name='phone' onChange={this.ChangeData}></input><br></br>
-              <input type="text" name='email' onChange={this.ChangeData}></input><br></br>
+              <input type="email" name='email' onChange={(event)=>{this.setState({emel:event.target.value})}}></input><br></br>
+              <input type="password" name='pass' onChange={(event)=>{this.setState({paswed:event.target.value})}}></input><br></br>
               <button type='submit'>Submit Martzz</button>
 
             </div>
