@@ -28,14 +28,15 @@ class App extends React.Component{
   }
 
   ChangeData= (event) => {
-    let val= event.target.value;
-    this.setState({contoh:val});
+    let val= event.target.name; //username
+    let myval = event.target.value //getting value
+    this.setState({[val]:myval}); // value set on the state
   }
 
   render(){
     return(
       <div className="App">
-        <h1>Single Input(OnChange punya Contoh '{this.state.contoh}')</h1>
+        <h1>Single Input(OnChange punya Contoh '{this.state.username}')</h1>
         <div>
           <form>
             <div class="form-group" style={{marginLeft:200}}>
