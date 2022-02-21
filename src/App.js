@@ -25,7 +25,10 @@ class App extends React.Component{
 
   state ={
     emel:"",
-    paswed:""
+    paswed:"",
+    emelEror:"",
+    paswedEror:"",
+    duaduaError:""
   }
 
   // ChangeData= (event) => {
@@ -34,9 +37,33 @@ class App extends React.Component{
   //   this.setState({[val]:myval}); // value set on the state
   // }
 
+validateData(){
+  if(!this.state.emel>0 && !this.state.paswed>0){
+    this.setState({duaduaError:"Isi la email dan juga password!"})
+    this.setState({emelEror:""}) //ni tambahan
+    this.setState({paswedEror:""}) //ni tambahan
+  }else if(!this.state.emel>0){
+    this.setState({emelEror:"Isi la email dulu mat"})
+    this.setState({duaduaError:""}) //ni tambahan
+    this.setState({paswedEror:""}) //ni tambahan
+  }else if(!this.state.paswed>0){
+    this.setState({paswedEror:"dahtu jangan lupa isi password lak ek eleh"})
+    this.setState({duaduaError:""}) //ni tambahan
+    this.setState({emelEror:""}) //ni tambahan
+  }else{
+    return true;
+  }
+}
+
  formSubmit = (event) =>{
      event.preventDefault(); //tak refresh bila tekan submit tau, power power 
-    console.log(this.state.emel, this.state.paswed)
+    
+     if(this.validateData()){
+       alert("dah login, yeayyyyyyyyyyyy!!!")
+       this.setState({paswedEror:""}) //ni tambahan
+      this.setState({duaduaError:""}) //ni tambahan
+      this.setState({emelEror:""}) //ni tambahan
+     }
     
     } 
   //kalau nak guna ni guna <form onSubmit={this.formSubmit}> gitchewww
@@ -45,16 +72,19 @@ class App extends React.Component{
     return(
       <div className="App">
         
-        <p>email lu mat: {this.state.emel}</p>
-        <p>paswed: {this.state.paswed}</p>
+        <p>Login Panel</p>
         <div>
           <form onSubmit={this.formSubmit}> 
             <div class="form-group" style={{marginLeft:200}}>
-              <label>input test:</label><br></br>
+              <label>email u</label><br></br>
               <input type="email" name='email' onChange={(event)=>{this.setState({emel:event.target.value})}}></input><br></br>
+              <strong style={{color:"red"}}>{this.state.emelEror}</strong><br></br>
+              
+              <label>password u</label><br></br>
               <input type="password" name='pass' onChange={(event)=>{this.setState({paswed:event.target.value})}}></input><br></br>
+              <strong style={{color:"red"}}>{this.state.paswedEror}</strong><br></br>
               <button type='submit'>Submit Martzz</button>
-
+              <strong style={{color:"red"}}>{this.state.duaduaError}</strong><br></br>
             </div>
           </form>
         </div>
