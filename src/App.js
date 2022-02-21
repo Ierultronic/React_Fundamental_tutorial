@@ -24,8 +24,9 @@ import React from "react";
 class App extends React.Component{
 
   state ={
-    emel:"",
-    details:""
+    age:""
+    // emel:"",
+    // details:""
     // paswed:"",
     // emelEror:"",
     // paswedEror:"",
@@ -56,40 +57,38 @@ class App extends React.Component{
 //   }
 // }
 
- formSubmit = (event) =>{
-     event.preventDefault(); //tak refresh bila tekan submit tau, power power 
+//  formSubmit = (event) =>{
+//      event.preventDefault(); //tak refresh bila tekan submit tau, power power 
     
-    //  if(this.validateData()){
-    //    alert("dah login, yeayyyyyyyyyyyy!!!")
-    //    this.setState({paswedEror:""}) //ni tambahan
-    //   this.setState({duaduaError:""}) //ni tambahan
-    //   this.setState({emelEror:""}) //ni tambahan
-    //  }
+//     //  if(this.validateData()){
+//     //    alert("dah login, yeayyyyyyyyyyyy!!!")
+//     //    this.setState({paswedEror:""}) //ni tambahan
+//     //   this.setState({duaduaError:""}) //ni tambahan
+//     //   this.setState({emelEror:""}) //ni tambahan
+//     //  }
     
-    } 
-  //kalau nak guna ni guna <form onSubmit={this.formSubmit}> gitchewww
+//     } 
+//   //kalau nak guna ni guna <form onSubmit={this.formSubmit}> gitchewww
 
   render(){
+    const buah = [
+      {nama:'mangga', berat:'sekilo', harga: 5},
+      {nama:'anggur', berat:'duakilo', harga: 10},
+      {nama:'sexy banana', berat:'sekilo', harga: 3}
+     ];
+    const items = buah.map((item, indexes) => {
+      return <li key={indexes}>
+        Nama: {item.nama}, Berat: {item.berat}, Harga: RM{item.harga} 
+        <button>Edit</button> | <button>Delete</button>
+      </li>
+    });
     return(
       <div className="App">
         
-        <p>Login Panel</p>
+        <h1>List buah buahan meleyshe</h1>
+        {items}
         <div>
-          <form onSubmit={this.formSubmit}> 
-            <div class="form-group" style={{marginLeft:200}}>
-              <label>email u</label><br></br>
-              <input type="email" name='email' onChange={(event)=>{this.setState({emel:event.target.value})}}></input><br></br>
-              {/* <strong style={{color:"red"}}>{this.state.emelEror}</strong><br></br> */}
-              
-              <label>Details u</label><br></br>
-              <textarea onChange={(event)=>{this.setState({details:event.target.value})}}>tulis sini</textarea><br></br>
-              <h6>{this.state.details}</h6>
-              {/* <input type="password" name='pass' onChange={(event)=>{this.setState({paswed:event.target.value})}}></input><br></br> */}
-              {/* <strong style={{color:"red"}}>{this.state.paswedEror}</strong><br></br> */}
-              <button type='submit'>Submit Martzz</button>
-              {/* <strong style={{color:"red"}}>{this.state.duaduaError}</strong><br></br> */}
-            </div>
-          </form>
+         
         </div>
 
       </div>
