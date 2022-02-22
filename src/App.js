@@ -1,4 +1,11 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from 'react-bootstrap/Container';
 // import logo from './logo.svg';
 // import './App.css';
 // import ComFunct from './components/Hello';
@@ -71,24 +78,47 @@ class App extends React.Component{
 //   //kalau nak guna ni guna <form onSubmit={this.formSubmit}> gitchewww
 
   render(){
-    const buah = [
-      {nama:'mangga', berat:'sekilo', harga: 5},
-      {nama:'anggur', berat:'duakilo', harga: 10},
-      {nama:'sexy banana', berat:'sekilo', harga: 3}
-     ];
-    const items = buah.map((item, indexes) => {
-      return <li key={indexes}>
-        Nama: {item.nama}, Berat: {item.berat}, Harga: RM{item.harga} 
-        <button>Edit</button> | <button>Delete</button>
-      </li>
-    });
+    
     return(
       <div className="App">
         
-        <h1>List buah buahan meleyshe</h1>
-        {items}
+        <Navbar bg="light" expand="lg">
+  <Container>
+    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="me-auto">
+        <Nav.Link href="#home">Home</Nav.Link>
+        <Nav.Link href="#link">Link</Nav.Link>
+        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+        </NavDropdown>
+      </Nav>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
         <div>
-         
+        <Breadcrumb>
+  <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+  <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
+    Library
+  </Breadcrumb.Item>
+  <Breadcrumb.Item active>Data</Breadcrumb.Item>
+</Breadcrumb>
+        </div>
+        <div>
+                
+  <Button variant="primary">Primary</Button>{' '}
+  <Button variant="secondary">Secondary</Button>{' '}
+  <Button variant="success">Success</Button>{' '}
+  <Button variant="warning">Warning</Button>{' '}
+  <Button variant="danger">Danger</Button> <Button variant="info">Info</Button>{' '}
+  <Button variant="light">Light</Button> <Button variant="dark">Dark</Button>{' '}
+  <Button variant="link">Link</Button>
         </div>
 
       </div>
