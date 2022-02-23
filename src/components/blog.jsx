@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // const axios = require('axios');
 import axios from "axios";
+import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
 
 export default class blog extends Component{
 
@@ -37,6 +38,7 @@ export default class blog extends Component{
         return(
             <div>
                 <h1><marquee class="marq" bgcolor="Green" behavior="alternate" direction="left" loop="">Ini adalah blog punya component</marquee></h1>
+                <Link to="/writePost">Tambah baru</Link>
                 <div class="d-flex text-center">
                     <div class="flex-grow-1 ms-3">
                     {allposts}

@@ -8,6 +8,7 @@ import Blog from './components/blog';
 import Contact from './components/contact';
 import Profile from './components/profile';
 import App from './App';
+import WritePosts from "./components/writePost";
 
 export default class header extends Component{
 
@@ -37,6 +38,7 @@ export default class header extends Component{
           <Route path="/blog" element={<Blog/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/" element={<App/>}/>
+          <Route path="/writePost" element={<WritePosts/>}/>
         </Routes>
             </Router>
         );
