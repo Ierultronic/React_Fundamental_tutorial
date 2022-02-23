@@ -9,6 +9,7 @@ import Contact from './components/contact';
 import Profile from './components/profile';
 import App from './App';
 import WritePosts from "./components/writePost";
+import Functional from "./components/functional";
 
 export default class header extends Component{
 
@@ -26,6 +27,7 @@ export default class header extends Component{
                                 <Nav.Link ><NavLink to="/contact">Contact</NavLink></Nav.Link>
                                 <Nav.Link ><NavLink to="/blog">Blog</NavLink></Nav.Link>
                                 <Nav.Link ><NavLink to="/profile">Profile</NavLink></Nav.Link>
+                                <Nav.Link ><NavLink to="/functional">Functional Component</NavLink></Nav.Link>
                             </Nav>
                             </Navbar.Collapse>
                         </Container>
@@ -39,6 +41,7 @@ export default class header extends Component{
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/" element={<App/>}/>
           <Route path="/writePost" element={<WritePosts/>}/>
+          <Route path="/functional" element={<Functional/>}/>
         </Routes>
             </Router>
         );
